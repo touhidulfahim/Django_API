@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django API</title>
+  </head>
+  <body>
+    <h3>Practice on github api</h3>
+    <form method="POST">
+      <input type="text" name="username" value="" required>
+      {% csrf_token %}
+      <input type="submit" name="" value="GET GITHUB INFO">
+    </form>
+
+{% if user %}
+<ul>
+  <li>User Name: {{user.login}}</li>
+  <li>URL: {{user.html_url}}</li>
+  <li>Repo: {{user.public_repos}}</li>
+  <li>Followers: {{user.followers}}</li>
+  <li>Join on: {{user.created_at}}</li>
+</ul>
+{% endif %}
+
+
+
+  </body>
+</html>
